@@ -10,29 +10,25 @@ a:focus{color:#666;outline:0}ul{padding:0;margin:0}body{background-color:#f2f2f2
 /* 
 
 write your code here
-@media screen (max-width: 1140px) and (max-height: 835px) {
+ 
 */
 
-/*  --- Task 1 ---  */
+	/*  --- Task 1 ---  */
 @media print {
 	
 	.tm-sidebar, #about, section:nth-child(n+3) {
 		display: none;
 	}
-
 	.tm-main-content {
-	margin-left: 0;
+		margin-left: 0;
 	}
-
 	.tm-banner {
-	height: 250px;
-	margin-bottom: 0;
+		height: 250px;
+		margin-bottom: 0;
 	}
-
 	.flex-2-col {
 		display: block;
 	}
-
 	.tm-team-description-container {
 		max-width: 100%;
 		padding: 0 30px 0 50px;
@@ -40,26 +36,23 @@ write your code here
 	.pad + .flex-item {
 		text-align: center;
 	}
-
 	.tm-section-title {
 		color: blue!important;
 	}
 }
 
-/*  --- Task 2 ---  */
+	/*  --- Task 2 ---  */
 @media screen {
 	
 	li.box {
-	border-bottom: none !important;
-	border-right: none !important;
+		border-bottom: none !important;
+		border-right: none !important;
 	}
-
 	li.box:nth-child(3n) {
-	border-right: 1px solid silver !important;
+		border-right: 1px solid silver !important;
 	}
-
 	li.box:nth-child(n+7) {
-	border-bottom: 1px solid silver !important;
+		border-bottom: 1px solid silver !important;
 	}
 	.box {
 		width: 33.3333333%;
@@ -72,7 +65,7 @@ write your code here
 	}
 
 	/*  --- Task 4 ---  */
-	.tm-sidebar, #about, section:nth-child(n+3), #home, .tm-main-content section:nth-child(2) .flex-2-col {
+	.tm-sidebar, #home, .tm-main-content section:nth-child(2) .flex-2-col, #about, section:nth-child(n+3) {
 		-webkit-box-shadow: 0px 0px 15px 5px rgba(46,37,14,1);
 		-moz-box-shadow: 0px 0px 15px 5px rgba(46,37,14,1);
 		box-shadow: 0px 0px 15px 5px rgba(46,37,14,1);
@@ -134,10 +127,13 @@ write your code here
 	/*  --- Task 12 ---  */
 	input[type="text"], button[type="submit"] {
   		color: red;
+	}
 }
 
-
-
-
-
+@media (max-width: 1140px) and (max-height: 835px) {
+	.tm-sidebar {
+		position: absolute;
+		
+		width: 100%;
+	}
 }
