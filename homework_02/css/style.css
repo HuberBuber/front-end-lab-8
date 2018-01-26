@@ -90,32 +90,37 @@ write your code here
 	/*  --- Task 8 ---  */
 	.tm-section-description {
 		text-indent: 25px;
+		line-height: 2.2em;
 	}
 
 	/*  --- Task 9 ---  */
-	.tm-content-box ol li a {
+	section.heading h2{
+		text-align: center;
+		color: #76cdd7;
+	}
+	.heading ol li a {
 		text-decoration: none;
 		color: black;
 	}
-	.tm-content-box ol li a:hover {
-		color: #0275D8;
+	.heading ol li a:hover {
+		color: #76cdd7;
 		text-decoration: underline;
 	}
-	.tm-content-box ol li a:visited {
+	.heading ol li a:visited {
 		color: silver;
 	}
-	.tm-content-box ol li .text:after {
+	.heading ol li a.text:after {
 		content: "New";
 		color: red;
-		vertical-align: text-top;
-		font-size: 10px;
+		vertical-align: top;
+		font-size: 11px;
 	}
 
 	/*  --- Task 10 ---  */
-	.blocks div:nth-child(3) li:nth-child(odd) {
+	.blocks li.box-bg {
 		background-color: #E6E6E6;
 	}
-	.blocks div:nth-child(3) p:first-letter {
+	.blocks ul p:first-letter {
 		color: #000;
 	}
 
@@ -129,8 +134,10 @@ write your code here
   		color: red;
 	}
 }
+
 	/*  --- Extra-Task 13 ---  */
-@media (max-width: 1140px) and (max-height: 835px) {
+@media screen and (max-width: 1139px), screen and (max-height: 834px) {
+
 	body {
 		padding-top: 0;
 	}
@@ -141,12 +148,12 @@ write your code here
 		width: 100%;
 		box-shadow: 0px 1px 5px 0px rgba(0,0,0,0.75);
 		background-color: #F2F2F2;
-		z-index: 10;
+		z-index: 20;
 	}
 	.tm-main-nav {
 		padding: 0;
 	}
-	.tm-sidebar li:not(:last-child){
+	.tm-sidebar li:not(:last-child) {
 		border-bottom: none;
 	}
 	.tm-main-nav li {
@@ -168,4 +175,10 @@ write your code here
 		padding-left: 0;
 		margin-top: 90px;
 	}
+	.img-fluid {
+		margin: 0 auto;
+	}
 }
+
+
+ 
