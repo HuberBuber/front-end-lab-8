@@ -1,4 +1,18 @@
 
+@mixin imgBorder {
+	border: 2px solid $headingColors;
+	padding:3px;
+} 
+
+@mixin brief {
+  width: $widthBrief;
+  float: $floatBrief;
+  color: #000;
+  background: $briefBackground;
+  padding: $paddingBrief;
+  margin: $marginBrief;
+}
+
 body {
 	background: $bodyBackground;
 	margin: 0;
@@ -6,21 +20,18 @@ body {
 	font-family: $fontStack;
 }
 
-@mixin headers {
-	h1{
-		margin: 0;
-		text-align: center;
-		color: $headingColors;
-		text-transform: $headSize;
-	}
+h1 {
+	margin: 0;
+	text-align: center;
+	color: $headingColors;
+	text-transform: $headSize;
 }
-@include headers;
 
 h2 {
 	color: $headingColors;
 }
 
-p{
+p {
 	margin: 16px 0;
 }
 
@@ -33,30 +44,20 @@ p{
 
 .img-left {
 	float:left;
-	border: 2px solid $headingColors;
-	padding:3px;
+	@include imgBorder;
 	margin-right:20px;
 }
 
 .img-right {
 	float:right;
-	border: 2px solid $headingColors;
-	padding:3px;
+	@include imgBorder;
 	margin: 0 0 10px 20px;
 }
 
-@mixin brief {
-	.brief {
-    width: $widthBrief;
-    color: #000;
-		float: left;
-    background: $briefBackground;
-    padding: 19px;
-    margin: 0 20px 20px 0;
-	}
+.brief{
+	box-sizing: border-box;
+	@include brief;
 }
-
-@include brief;
 
 a {
 	color: $linkColor;
@@ -66,12 +67,12 @@ a {
 }
 
 /* styles for table*/
-caption{
+caption {
 	text-align: right;
 	color: #000;
 }
 
-table{
+table {
 	border-collapse: collapse;
 	margin-bottom: 50px;
 	td,th{
@@ -97,22 +98,23 @@ th {
 }
 
 /* styles for form*/
-.form{
+.form {
 	float: left;
 	width: 50%;
 }
+
 .control-label {
 	text-transform: $textUppercase;
 	color: $formTextColor;
 }
 
-.input, textarea{
+.input, textarea {
 	width:100%;
 	margin-bottom:15px;
 	margin-top: 5px;
 }
 
-.input{
+.input {
 	height: 25px;
 }
 
@@ -131,7 +133,7 @@ th {
 	background: $contentBackground;
 	cursor: pointer;
 	transition-duration: 0.4s;
-	&:hover{
+	&:hover {
 		background-color: $buttonColor;
   	color: $contentBackground;
 	}

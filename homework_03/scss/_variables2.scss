@@ -2,15 +2,21 @@ $contentBackground: #3b3b3b;
 $fontStack: Times, serif;
 $bodyBackground: rgba(198, 238, 252, 0.53);
 $headingColors: #fccd10;
-$briefBackground: #fff178;
 $textColor: #fff;
 $linkColor: #f5c70f;
-$tableHeaderColor: #94a34e;
-$tableBackgroundColor: #677d01;
 $formTextColor: #f5c70f;
 $buttonColor: $linkColor;
 $textUppercase: uppercase;
 $headSize: $textUppercase;
-$widthBrief: 96%;
 
+// variables for table
+$tableHeaderColor: #94a34e;
+$tableBackgroundColor: #677d01;
+
+// variables for brief
+$widthBrief: 100%;
+$floatBrief: none;
+$paddingBrief: 20px 0 20px 20px;
+$marginBrief: 0 0 40px 0;
+$briefBackground: #fff178;
 
