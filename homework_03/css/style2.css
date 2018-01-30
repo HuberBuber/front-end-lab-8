@@ -74,8 +74,12 @@ th {
     border-right: 1px solid #fff; }
 
 /* styles for form*/
-.form {
+.block-left {
   float: left;
+  width: 49%; }
+
+.block-right {
+  float: right;
   width: 50%; }
 
 .control-label {
@@ -89,9 +93,6 @@ th {
 
 .input {
   height: 25px; }
-
-#inputName {
-  width: 98%; }
 
 .btn {
   text-transform: uppercase;

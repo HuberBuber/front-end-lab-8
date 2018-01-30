@@ -6,8 +6,8 @@
 
 @mixin brief {
   width: $widthBrief;
-  float: $floatBrief;
-  color: #000;
+	float: $floatBrief;
+	color: #000;
   background: $briefBackground;
   padding: $paddingBrief;
   margin: $marginBrief;
@@ -98,8 +98,13 @@ th {
 }
 
 /* styles for form*/
-.form {
+.block-left{
 	float: left;
+	width: 49%;
+}
+
+.block-right{
+	float: right;
 	width: 50%;
 }
 
@@ -116,10 +121,6 @@ th {
 
 .input {
 	height: 25px;
-}
-
-#inputName {
-	width: 98%;
 }
 
 .btn {
