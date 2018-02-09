@@ -18,15 +18,9 @@ if ( a*a + b*b == c*c || b*b + c*c == a*a || a*a + c*c == b*b){
 	square = Math.sqrt(p*(p - a)*(p - b)*(p - c));
 	fix = +square.toFixed(2);
 
-if (a <= 0 || b <= 0 || c <= 0) {
+if (a <= 0 || b <= 0 || c <= 0 || square == 0 || isNaN(square)) {
 		console.log('For data ' + a + ', ' + b + ', ' + c + ':' );
 		console.log('"Incorrect data"');
-	} else if (square == 0) {
-		console.log('For data ' + a + ', ' + b + ', ' + c + ':' );
-		console.log('"Incorrect data : square of triangle cannot be equal to 0"');
-	} else if (isNaN(square)){
-		console.log('For data ' + a + ', ' + b + ', ' + c + ':' );
-		console.log('"Incorrect data : Error, result is NaN"');
 	} else {
 		console.log('For data ' + a + ', ' + b + ', ' + c + ':' );
 		console.log('Type of triangle is ' + typeTriangle + ' and square is: ' + fix);
