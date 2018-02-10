@@ -3,8 +3,8 @@ var n, i, j, space, brick;
 
 	n = +prompt("Please enter a number from 1 to 20", "0");
 
-if (n <=0 || n > 20 ) {
-	console.log('Incorrect');
+if (n <=0 || n > 20 || isNaN(n)) {
+	console.error('Incorrect');
 } else {
 		for (i = 0; i < n; i++){
 			space = '';

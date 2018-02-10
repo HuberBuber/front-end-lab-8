@@ -1,51 +1,64 @@
-var priceNumber;
-var userNumber;
 var game = confirm("Do you want to play a game?");
+var prizeNumber;
+var userNumber;
 var min = 0;
 var max = 5;
-var price = 0;
-var maxPrice = 10;
-var goOn;
+var prize = 0;
+var maxPrize = 10;
+var totalPrize = 0;
+var possiblePrize;
+var goOn = true;
 
 	if (game == true){
-			
-			function random(min, max) {
-	     	priceNumber = parseInt(Math.random() * (max - min + 1)+ min);
-	     	console.log(priceNumber);
-	     }
-			random(min, max);
-			
 
-			for (var i = 1; i <= 3; i++) {
-				userNumber = +prompt('choose number from 1 to 5', '');
-				
-				if (i == 1 && priceNumber == userNumber){
-					price = maxPrice;
-					console.log('price is ' + price + '$');
-					break;
-				} else if (i == 2 && priceNumber == userNumber){
-					price = maxPrice/2;
-					console.log('price is ' + price + '$');
-					break;
-				} else if (i == 3 && priceNumber == userNumber){
-					price = +((maxPrice/2)/2).toFixed();
-					console.log('price is ' + price + '$');
-					break;
+		while (goOn == true){
+			prizeNumber = Math.floor(Math.random() * (max - min + 1));
+			possiblePrize = maxPrize;
+				for (var i = 3; i > 0; i--) {
+					
+		     	//console.log(prizeNumber);
+
+					userNumber = +prompt("Enter a number from 0 to " + max + "\n" + "Attemts left: " + i +  "\n" + "Total prize: " + totalPrize + "$\n" + "Possible prize in current attempt: " + possiblePrize + "$");
+					if (userNumber < 0 || isNaN(userNumber)){
+						console.error("Error, wrong number!");
+					}
+						
+					if (i == 3 && prizeNumber == userNumber){
+						prize = maxPrize;
+						//console.log('prize is ' + prize + '$');
+						break;
+					} else if (i == 2 && prizeNumber == userNumber){
+						prize = maxPrize/2;
+						//console.log('prize is ' + prize + '$');
+						break;
+					} else if (i == 1 && prizeNumber == userNumber){
+						prize = Math.floor((maxPrize/2)/2);
+						//console.log('prize is ' + prize + '$');
+						break;
+					}
+					possiblePrize = Math.floor(possiblePrize/2);
+					
+					if (i == 1 && prizeNumber != userNumber && prize == 0){
+						console.log("Thank you for a game. Your prize is: " + prize + "$ Do you want to play again?");
+					} 
+					if (i == 1 && prizeNumber != userNumber){
+						goOn = false;
+						prize = 0;
+					}
 				}
-			}
 
-			if (priceNumber != userNumber){
-				console.log("Thank you for a game. Your prize is: " + price + "$ Do you want to play again?");
-			} else {
-				goOn = confirm("Do you want to continue a game?");
-			}
-
-			if (goOn == true) {
-				max = max * 2;
-				random(min, max);
-			} else if ( goOn != true && price != 0){
-				console.log("Thank you for a game. Your prize is: " + price + "$ Do you want to play again?");
-			}
+				if (prizeNumber == userNumber) {
+						goOn = confirm("Congratulation, you guess a number!!! Do you want to continue a game?");
+				}
+				totalPrize = totalPrize + prize;
+				if (goOn == true) {
+						max = max * 2;
+						maxPrize = maxPrize * 3;
+						i = 3;
+				} else if (goOn != true && totalPrize != 0){
+						console.log("Thank you for a game. Your prize is: " + totalPrize + "$ Do you want to play again?");
+					}
+		}
 
 	}else{
 		console.log("You didn't become a milionare" );
