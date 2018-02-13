@@ -30,31 +30,38 @@ var goOn = true;
 						prize = Math.floor((maxPrize/2)/2);
 						break;
 					}
-
 					possiblePrize = Math.floor(possiblePrize/2);
-					
-					if (i == 1 && prizeNumber != userNumber && prize == 0){
-						console.log("Thank you for a game. Your prize is: " + prize + "$ Do you want to play again?");
-					} 
-					if (i == 1 && prizeNumber != userNumber){
-						goOn = false;
-						prize = 0;
-					}
 				}
 
-				if (prizeNumber == userNumber) {
-						goOn = confirm("Congratulation, you guess a number!!! Do you want to continue a game?");
-				} 
 				totalPrize = totalPrize + prize;
-				if (goOn == true) {
-						max = max * 2;
-						maxPrize = maxPrize * 3;
-						i = 3;
+
+				if (prizeNumber != userNumber){
+					totalPrize = 0;
+					console.log("Thank you for a game. Your prize is: " + totalPrize + "$");
+					goOn = confirm("Do you want to play a game?");
+					prize = 0;
+					max = 5;
+					maxPrize = 10;
+				} 
+				
+				if (prizeNumber == userNumber) {
+					goOn = confirm("Do you want to continue a game?");
+				} 
+				
+				if (goOn == true && prizeNumber == userNumber) {
+					max = max * 2;
+					maxPrize = maxPrize * 3;
+					i = 3;
 				} else if (goOn != true && totalPrize != 0){
-						console.log("Thank you for a game. Your prize is: " + totalPrize + "$ Do you want to play again?");
-				}
+					console.log("Thank you for a game. Your prize is: " + totalPrize + "$");
+					goOn = confirm("Do you want to play a game?");
+					prize = 0;
+					max = 5;
+					maxPrize = 10;
+					totalPrize = 0;
+				}		
 		}
 
-	}else{
+	} else {
 		console.log("You didn't become a milionare" );
 	}
