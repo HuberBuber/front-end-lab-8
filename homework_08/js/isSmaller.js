@@ -1,4 +1,4 @@
-function isBigger (a, b){
+function isSmaller (a, b){
 	return a < b;
 }
 
