@@ -1,0 +1,4 @@
+
+function decypherPhrase (arr, str){
+	 
+};
